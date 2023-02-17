@@ -21,6 +21,8 @@
    .container {
      padding: 20px;
 
+     
+
      hr {
        margin: 20px 0px;
        border: none;
@@ -61,14 +63,26 @@
          gap: 20px;
          cursor: pointer;
 
+        
+
          img {
-           width: 20px;
+           width: 25px;
          }
 
          span {
            font-size: 12px;
            color: themed("textColor");
          }
+       }
+
+       .currentUser {
+          
+        img {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          object-fit: cover;
+      }
        }
      }
    }

@@ -1,20 +1,30 @@
-import { useState, useEffect } from 'react';
-import Login from './pages/login/Login';
-import Register from './pages/register/Register';
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
-import Navbar from './components/navbar/Navbar';
-import LeftBar from './components/leftbar/LeftBar';
-import Home from './pages/home/Home';
-import Profile from './pages/profile/Profile';
-import RightBar from './components/rightbar/RightBar';
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  BrowserRouter,
+  Route,
+  Routes,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
+import LeftBar from "./components/leftbar/LeftBar";
+import RightBar from "./components/rightbar/RightBar";
+import Home from "./pages/home/Home";
+import Profile from "./pages/profile/Profile";
+import "./style.scss";
+import { useContext } from "react";
+import { DarkModeContext } from './context/darkModeContext';
+import { AuthContext } from "./context/authContext";
 
 function App() {
+  // const {currentUser} = useContext(AuthContext);
   const currentUser = true;
-  const [mode, setMode] = useState(JSON.parse(localStorage.getItem('changeMode' || false)))
 
-  useEffect(() => {
-    localStorage.setItem('changeMode', JSON.stringify(mode));
-  }, [mode])
+  const { mode } = useContext(DarkModeContext);
+
   
   return (
     <div className={`theme-${mode ? 'dark' : 'light'}`}>
@@ -28,15 +38,14 @@ function App() {
       ) : (
         <div>
         <Navbar 
-          mode={mode}
-          setMode={setMode}
+          
           />
         <div style={{display: 'flex'}}>
           <LeftBar />
           <div style={{flex: 6}}>
             <BrowserRouter>
               <Routes>
-                <Route path='/home' element={<Home />}/>
+                <Route path='/' element={<Home />}/>
                 <Route path='/profile/:id' element={<Profile />}/>
               </Routes>
             </BrowserRouter>

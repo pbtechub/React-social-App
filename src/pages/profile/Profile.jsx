@@ -27,10 +27,8 @@ const Profile = () => {
       </div>
       <div className="profileContainer">
         <div className="uInfo">
-        <div className="top">
-            
+        <div className="top"> 
             <div className="info">
-              
               <div>
                 <div className="item">
                   <PlaceIcon fontSize="small"/>
@@ -43,8 +41,7 @@ const Profile = () => {
               </div>
               <span>Jane Doe</span>
               <button>follow</button>
-            </div>
-            
+            </div> 
           </div>
           <div className="bottom">
             <div className="left">

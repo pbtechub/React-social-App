@@ -29,6 +29,7 @@
                 align-items: center;
                 gap: 15px;
                 
+                
             }
            
             .search {
@@ -87,14 +88,16 @@
                 gap: 10px;
                 font-weight: 500;
                 font-size: 14px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
             }
     
-            img {
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                object-fit: cover;
-            }
+           
         }
     }
 }

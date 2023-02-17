@@ -12,7 +12,15 @@ import watchImg from './img/watch.png'
 import marketImg from './img/market.png'
 import courImg from './img/cour.png'
 import userImg from './img/user.jpg'
+import userImg2 from './img/men.jpg'
 
+
+export const user = 
+    {
+        id: 1,
+        name: "John Doe",
+        profilePic: {userImg2}
+      }
 
 
 
@@ -202,14 +210,7 @@ export const rightItems = [
     },
 ]
 
-export const user = [
-    {
-        id: 1,
-        name: "John Doe",
-        profilePic:
-          "https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      }
-]
+
 
 export const stories = [ 
     {

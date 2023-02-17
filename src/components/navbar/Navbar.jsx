@@ -9,8 +9,16 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
+import { AuthContext } from "../../context/authContext";
 
-const Navbar = ({mode, setMode}) => {
+const Navbar = () => {
+
+    const {mode, toggleMode} = useContext(DarkModeContext);
+    const { currentUser} = useContext(AuthContext);
+
+    console.log(currentUser)
     
   return (
     <div className="navbar">
@@ -22,31 +30,31 @@ const Navbar = ({mode, setMode}) => {
                 <HomeOutlinedIcon style={{width: "20px", height: "20px"}}/>
                 {!mode ?
                  (<DarkModeOutlinedIcon 
-                    onClick={()=> setMode(!mode)}
-                    style={{width: "20px", height: "20px"}}/>) :
+                    onClick={toggleMode}
+                    style={{width: "20px", height: "20px", cursor: 'pointer'}}/>) :
                  (<WbSunnyOutlinedIcon 
-                    onClick={()=> setMode(!mode)}
-                    style={{width: "20px", height: "20px"}}/>)}
-                <GridViewOutlinedIcon style={{width: "20px", height: "20px"}}/>
+                    onClick={toggleMode}
+                    style={{width: "20px", height: "20px", cursor: 'pointer'}}/>)}
+                <GridViewOutlinedIcon style={{width: "20px", height: "20px", cursor: 'pointer'}}/>
             </div>
             <div className="search">
-                <SearchOutlinedIcon style={{width: "20px", height: "20px"}}/>
+                <SearchOutlinedIcon style={{width: "20px", height: "20px", cursor: 'pointer'}}/>
                 <input type="text" placeholder="Search..." />
             </div>
 
         </div>
         <div className="right">
             <div className="right-icons">
-                <PersonOutlinedIcon style={{width: "20px", height: "20px"}}/>
-                <EmailOutlinedIcon style={{width: "20px", height: "20px"}}/>
-                <NotificationsOutlinedIcon style={{width: "20px", height: "20px"}}/>
+                <PersonOutlinedIcon style={{width: "20px", height: "20px", cursor: 'pointer'}}/>
+                <EmailOutlinedIcon style={{width: "20px", height: "20px", cursor: 'pointer'}}/>
+                <NotificationsOutlinedIcon style={{width: "20px", height: "20px", cursor: 'pointer'}}/>
             </div>
             <div className="user">
                 <img
-                    src={"https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"}
+                    src={currentUser.profilePic}
                     alt=""
                 />
-                <span>John Doe</span>
+                <span>{currentUser.userName}</span>
             </div>
 
         </div>
