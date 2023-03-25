@@ -22,8 +22,7 @@ const {mode, toggleMode} = useContext(DarkModeContext);
 const [profileControl, setProfileControl] = useState(false)
 const { currentUser} = useContext(AuthContext);
 
-    
- 
+
   return (
     <div className="navbar">
         <div className="left">
@@ -63,7 +62,10 @@ const { currentUser} = useContext(AuthContext);
                 />
                 {/* <span>{currentUser.username}</span> */}
                 <div>
-                    <ExpandMoreIcon className="chevronDown"/>
+                    <ExpandMoreIcon 
+                        className="chevronDown" 
+                        style={{ transform: profileControl && 'rotate(180deg)'}}
+                        />
                 </div>
             </div>
 

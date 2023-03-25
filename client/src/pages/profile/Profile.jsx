@@ -9,8 +9,13 @@ import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Posts from "../posts/Posts"
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 
 const Profile = () => {
+
+  const { currentUser} = useContext(AuthContext);
+
   return (
     <div className="profile">
       <div className="images">
@@ -32,14 +37,14 @@ const Profile = () => {
               <div>
                 <div className="item">
                   <PlaceIcon fontSize="small"/>
-                  <span>USA</span>
+                  <span>{currentUser.city}</span>
                 </div>
                 <div className="item">
                   <LanguageIcon fontSize="small"/>
-                  <span>lama.dev</span>
+                  <span>{currentUser.website}</span>
                 </div>
               </div>
-              <span>Jane Doe</span>
+              <span>{currentUser.name}</span>
               <button>follow</button>
             </div> 
           </div>

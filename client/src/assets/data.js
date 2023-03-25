@@ -20,12 +20,14 @@ import { MdFeedback } from 'react-icons/md';
 import { HiOutlineLogout } from 'react-icons/hi';
 
 
-export const user = 
+export const user = [
+
     {
         id: 1,
         name: "John Doe",
         profilePic: {userImg2}
       }
+]
 
 
 

@@ -1,17 +1,21 @@
 import './comments.scss'
 import { comments } from '../../assets/data'
-import { user } from '../../assets/data'
+import { useContext } from 'react';
+import { AuthContext } from '../../context/authContext';
+
 
 const Comments = () => {
+
+  const { currentUser} = useContext(AuthContext);
   return (
     <div className="comments">
-        {user.map(currentUser => (
+       
             <div className="write">
             <img src={currentUser.profilePic} alt="" />
             <input type="text" placeholder="write a comment" />
             <button>Send</button>
           </div>
-        ))}
+       
       
       {comments.map((comment) => (
         <div className="comment">

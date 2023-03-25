@@ -9,6 +9,7 @@ import likeRouter from '../server/routes/likes.js'
 import cors from 'cors';
 import cookieParser from "cookie-parser"; 
 
+
 const app = express();
 const PORT = process.env.PORT || 8800;
 
@@ -18,7 +19,8 @@ app.use((req, res, next) => {
     next();
 })
 app.use(cors({origin:'http://localhost:3000'}))
-app.use(cookieParser())
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/', userRouter)
 app.use('/', postRouter)

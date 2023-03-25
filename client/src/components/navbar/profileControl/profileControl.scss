@@ -55,29 +55,40 @@
                     display: flex;
                     gap: 10px;
                     align-items: center;
+                    justify-content: space-between;
                     cursor: pointer;
-
                     div {
                         display: flex;
+                        gap: 10px;
                         align-items: center;
-                        justify-content: center;
-                        width: 35px;
-                        height: 35px;
-                        background-color: themed("bgSoft");
-                        border-radius: 50px;
-                        font-size: 1.4rem;
+
+                        div {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 35px;
+                            height: 35px;
+                            background-color: themed("bgSoft");
+                            border-radius: 50px;
+                            font-size: 1.4rem;
+                        }
+                        p {
+                            font-size: .9rem;
+                            font-weight: 500;
+                        }
                     }
-                    p {
-                        font-size: .9rem;
-                        font-weight: 500;
-                    }
+
                   
                     
                 }
                 li:hover {
                     background-color: themed("bgSoft");
-                    div {
-                        background-color: themed('bg');
+
+                    .left {
+
+                        div {
+                            background-color: themed('bg');
+                        }
                     }
                 }
             }

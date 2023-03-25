@@ -30,7 +30,17 @@ const Login = () => {
     }
     
   }
+  // 2423434 password
 
+  
+//  {
+//   "username" :"alecbenjimin",
+//   "password" : "2423434",
+//    "email": "alexben@gmail.com",
+//    "name": "Alec"
+
+// }
+  
   return (
     <div className='login'>
       <div className="card">

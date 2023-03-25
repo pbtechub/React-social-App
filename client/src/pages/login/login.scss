@@ -1,9 +1,15 @@
+@import '../../style.scss';
+
+
 .register {
+    @include themify($themes) {
     height: 100vh;
     background-color: rgb(193, 190, 255);
     display: flex;
     align-items: center;
     justify-content: center;
+
+ 
     
     .card {
         width: 50%;
@@ -13,6 +19,8 @@
         border-radius: 10px;
         min-height: 80%;
         overflow: hidden;
+
+  
         .left {
             flex: 1;
             background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
@@ -79,4 +87,5 @@
             }
         }
     }
+}
 }

@@ -2,6 +2,7 @@ import './profileControl.scss'
 import { AuthContext } from '../../../context/authContext'; 
 import {  useNavigate, NavLink} from 'react-router-dom'
 import { useContext } from "react";
+import { BsChevronRight } from 'react-icons/bs'
 
 import { profileControls } from '../../../assets/data';
 
@@ -9,6 +10,7 @@ const ProfileControl = () => {
     const { currentUser} = useContext(AuthContext);
     const { logout } = useContext(AuthContext)
     const navigate = useNavigate();
+   
 
     const handleLogout = async (e)=> {
         e.preventDefault()
@@ -20,6 +22,20 @@ const ProfileControl = () => {
         }
         
       }
+
+      const handleSettings = () => {
+        console.log('Settings');
+      }
+      const handleHelpAndSupport = () => {
+        console.log('handleHelpAndSupport');
+      }
+      const handleDisplayAndAccessibility = () => {
+        console.log('handleDisplayAndAccessibility');
+      }
+      const handleFeedback = () => {
+        console.log('handleFeedback');
+      }
+    
   return (
     <div className='profileControl'>
        <div className="user">
@@ -34,9 +50,22 @@ const ProfileControl = () => {
                 <ul>
                     <li  
                         key={ele.id}
-                        onClick={ idx === profileControls.length -1 ? handleLogout : null} > 
-                        <div>{ele.icon}</div>
-                        <p>{ele.name}</p>
+                        onClick={ idx === profileControls.length -1 ? handleLogout : 
+                                idx === 0 ? handleSettings : 
+                                idx === 1 ? handleHelpAndSupport : 
+                                idx === 2 ? handleDisplayAndAccessibility : 
+                                handleFeedback} 
+                                > 
+                        <div className='left'>
+                            <div>{ele.icon}</div>
+                            <p>{ele.name}</p>
+                        </div>
+                        {idx < profileControls.length - 2 && (
+
+                        <div className='right'>
+                            <BsChevronRight />
+                        </div>
+                        )}
                     </li>
 
                 </ul>

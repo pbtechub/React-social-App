@@ -60,13 +60,3 @@ const LeftBar = () => {
 export default LeftBar
 
 
-
-{/* <div className="menu">
-          <div className="user">
-            <img src="" alt="" />
-            <span>Name</span>
-          </div>
-          <div className="item">
-            
-          </div>
-        </div> */}
